@@ -1,0 +1,14 @@
+{
+  "name": "static-boilerplate",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "html5shiv": "~3.7.2"
+  }
+}
