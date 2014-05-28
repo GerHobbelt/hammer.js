@@ -48,7 +48,9 @@ gulp.task("compress-images", function () {
     gulp.src("src/assets/img/**/*")
         .pipe(plumber())
         .pipe(changed("assets/img"))
-        .pipe(imagemin({svgoPlugins: [{ cleanupIDs: false }]}))
+        .pipe(imagemin({svgoPlugins: [
+            { cleanupIDs: false }
+        ]}))
         .pipe(gulp.dest("assets/img"));
 });
 
