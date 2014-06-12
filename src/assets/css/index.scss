@@ -1,0 +1,106 @@
+@import "normalize.scss";
+
+body {
+  margin: 15px;
+  line-height: 1.5;
+}
+
+a {
+  color: blue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .15em;
+}
+
+table, p, pre, ul, ol, blockquote {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  h1 {
+    float: left;
+  }
+
+  .share {
+    padding: 10px 0;
+    float: right;
+  }
+}
+
+
+.intro {
+  clear: both;
+  p {
+    font: italic 1.2em/1.7 Georgia, Times New Roman, sans-serif;
+  }
+}
+
+.try {
+  .device {
+    background: #ccc;
+    padding: 2px;
+    margin: 20px 0;
+    position: relative;
+    border-radius: 2px;
+  }
+
+  .screen {
+    background: #eee;
+    height: 400px;
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #ddd inset;
+  }
+
+  .hitarea {
+    background: green;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width:700px) {
+  .try .device {
+    background: #222;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px 10%;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      overflow: hidden;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      margin-top: -10px;
+      border: solid 1px #444;
+      border-radius: 100%;
+    }
+  }
+}
+
+pre {
+  padding: 10px 15px;
+  background: #eee;
+  box-shadow: 0 0 3px #ddd inset;
+  font-size: .85em;
+}
+

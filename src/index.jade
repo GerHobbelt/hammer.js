@@ -1,6 +1,69 @@
 doctype html
 html
   head
-
+    title Hammer.js
+    link(rel="stylesheet", href="assets/css/index.css")
   body
-    | !{readme}
+    .container
+      .header
+        h1 Hammer.js 2.0
+
+        .share
+          a(href="//twitter.com/share",
+            class="twitter-share-button",
+            data-text="Stop, hammertime! Touch gestures for your webapp #touch #javascript #hammerjs") Tweet
+
+          iframe(src="//ghbtns.com/github-btn.html?user=eightmedia&amp;repo=hammer.js&amp;type=watch&amp;count=true"
+              allowtransparency="true", frameborder="0", scrolling="0", width="110", height="20")
+
+      .intro
+        :markdown
+          Completely rewritten, with better experience for the recent mobile browsers by making use of the
+          touch-action css property, and a better API for more expert usage. Also v2 can detect multiple gestures at the
+          same page, making it possible to build multi-user apps.
+
+          - [View the source on GitHub](http://github.com/EightMedia/hammer.js/tree/2.0.x/)
+          - [Read the README.md](http://github.com/EightMedia/hammer.js/tree/2.0.x/README.md)
+          - [Hammer.js wiki pages](http://github.com/EightMedia/hammer.js/wiki/)
+
+      .try
+        .device
+          .screen
+            .hitarea
+
+      :markdown
+        ## Getting started
+        Hammer is easy to use. Just create an instance and bind the events. By default it supports all the standard
+        gestures you would expect.
+
+          ````js
+        var mc = Hammer(myElement);
+        mc.on("swipeleft swiperight", mySwipeHandler);
+        ````
+          By default it supports the `tap`, `doubletap`, `pan`, `swipe`, `hold`, `pinch` and `rotate` gestures. The default
+        `touch-action` property is set to `pan-y`, so horizontal scrolling is being prevented, but vertical scrolling is
+        still possible.
+
+
+    script.
+      !function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "//platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, "script", "twitter-wjs");
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30289566-1']);
+      _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
