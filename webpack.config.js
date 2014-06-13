@@ -27,7 +27,7 @@ module.exports = {
         ]
     },
     plugins: [
-        //new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
         )

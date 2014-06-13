@@ -16,20 +16,9 @@ var START_Y = Math.round((el.parentNode.offsetHeight - el.offsetHeight) / 2);
 var ticking = false;
 var transform;
 
-var mc = new Hammer.Manager(el, {
+var mc = new Hammer(el, {
     touchAction: 'none'
 });
-
-mc.add(new Hammer.Pan({ threshold: 0, pointers: 2 }));
-mc.add(new Hammer.Rotation({ threshold: 0 })).join('pan');
-mc.add(new Hammer.Pinch({ threshold: 0 })).join('pan').join('rotate');
-
-mc.add(new Hammer.Swipe());
-mc.add(new Hammer.Pan({ threshold: 0 })).join('swipe');
-
-mc.add(new Hammer.Tap({ event: 'tripletap', taps: 3 }));
-mc.add(new Hammer.Tap({ event: 'doubletap', taps: 2 }));
-mc.add(new Hammer.Tap());
 
 mc.on("pan", onPan);
 mc.on("swipe", onSwipe);
@@ -37,7 +26,6 @@ mc.on("rotate", onRotate);
 mc.on("pinch", onPinch);
 mc.on("tap", onTap);
 mc.on("doubletap", onDoubleTap);
-mc.on("tripletap", onTripleTap);
 
 mc.on("panstart rotatestart pinchstart", resetElementStart);
 mc.on("panend rotateend pinchend pancancel rotatecancel pinchcancel", resetElementEnd);
@@ -109,11 +97,6 @@ function onTap(ev) {
 }
 
 function onDoubleTap(ev) {
-    transform.scale = transform.scale === 1 ? 1.5 : 1;
-    requestElementUpdate();
-}
-
-function onTripleTap(ev) {
     transform.rotate = !transform.rotate ? 360 : 0;
     requestElementUpdate();
 }
