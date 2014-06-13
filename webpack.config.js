@@ -13,8 +13,7 @@ module.exports = {
     output: {
         path: "./assets/js/",
         publicPath: "/assets/js/",
-        filename: "[name].js",
-        sourceMapFilename: "[file].map"
+        filename: "[name].js"
     },
     resolve: {
         modulesDirectories: ["./node_modules", "./bower_components"],

@@ -47,7 +47,7 @@ gulp.task("server", function () {
     connect.server({
         root: "",
         host: "0.0.0.0",
-        port: 8000,
+        port: 9000,
         livereload: true,
         middleware: function () {
             return [ compress({ level: 9}) ];
