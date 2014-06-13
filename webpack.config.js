@@ -6,8 +6,7 @@ module.exports = {
     // entry points
     // the key will be the filename in /assets/js/
     entry: {
-        common: './src/assets/js/common/index.js',
-        site: './src/assets/js/site/index.js'
+        index: './src/assets/js/index.js'
     },
 
     devtool: 'source-map',

@@ -2,36 +2,49 @@ doctype html
 html
   head
     title Hammer.js
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
     link(rel="stylesheet", href="assets/css/index.css")
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600")
   body
     .container
       .header
-        h1 Hammer.js 2.0
+        h1 HAMMER.JS 2.0
 
         .share
           a(href="//twitter.com/share",
             class="twitter-share-button",
             data-text="Stop, hammertime! Touch gestures for your webapp #touch #javascript #hammerjs") Tweet
 
-          iframe(src="//ghbtns.com/github-btn.html?user=eightmedia&amp;repo=hammer.js&amp;type=watch&amp;count=true"
+          iframe(src="//ghbtns.com/github-btn.html?user=eightmedia&repo=hammer.js&type=watch&count=true"
               allowtransparency="true", frameborder="0", scrolling="0", width="110", height="20")
 
-      .intro
+    .splash
+      .container
         :markdown
           Completely rewritten, with better experience for the recent mobile browsers by making use of the
-          touch-action css property, and a better API for more expert usage. Also v2 can detect multiple gestures at the
-          same page, making it possible to build multi-user apps.
+          touch-action css property, and a better API for more expert usage.
 
+          Also it's now able to recognize multiple gestures at the same page,
+          making it possible to build multi-user apps.
+
+        a.download(href="http://github.com/EightMedia/hammer.js/tree/2.0.x/hammer.min.js")
+          strong Hammer.min.js
+          em v2.0.0 - 2.94kb gzipped
+
+        :markdown
           - [View the source on GitHub](http://github.com/EightMedia/hammer.js/tree/2.0.x/)
           - [Read the README.md](http://github.com/EightMedia/hammer.js/tree/2.0.x/README.md)
           - [Hammer.js wiki pages](http://github.com/EightMedia/hammer.js/wiki/)
 
-      .try
-        .device
-          .screen
-            .hitarea
+        .try
+          .device
+            .button
+            .screen
+              #hitarea
 
-      :markdown
+    // .container
+      .readme !{readme}
+      // :markdown
         ## Getting started
         Hammer is easy to use. Just create an instance and bind the events. By default it supports all the standard
         gestures you would expect.
@@ -45,25 +58,4 @@ html
         still possible.
 
 
-    script.
-      !function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if(!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "//platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, "script", "twitter-wjs");
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-30289566-1']);
-      _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-      })();
+    script(src="assets/js/index.js")

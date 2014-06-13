@@ -10,7 +10,6 @@ var plumber = require("gulp-plumber");
 var changed = require("gulp-changed");
 var sass = require("gulp-sass");
 var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
 var uglify = require("gulp-uglify");
 var jade = require("gulp-jade");
 var connect = require("gulp-connect");
@@ -44,16 +43,6 @@ gulp.task("compile-jade", function () {
         .pipe(connect.reload());
 });
 
-gulp.task("compress-images", function () {
-    gulp.src("src/assets/img/**/*")
-        .pipe(plumber())
-        .pipe(changed("assets/img"))
-        .pipe(imagemin({svgoPlugins: [
-            { cleanupIDs: false }
-        ]}))
-        .pipe(gulp.dest("assets/img"));
-});
-
 gulp.task("server", function () {
     connect.server({
         root: "",
@@ -68,10 +57,9 @@ gulp.task("server", function () {
 
 gulp.task("watch", function () {
     gulp.watch("src/assets/css/**/*", ["compile-sass"]);
-    gulp.watch("src/assets/img/**/*", ["compress-images"]);
     gulp.watch("src/assets/js/**/*", ["webpack"]);
     gulp.watch("src/**/*.jade", ["compile-jade"]);
 });
 
 gulp.task("default", ["server", "watch"]);
-gulp.task("build", ["compile-sass", "compile-js", "compile-jade", "compress-images"]);
+gulp.task("build", ["compile-sass", "compile-js", "compile-jade"]);
