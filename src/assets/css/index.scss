@@ -1,5 +1,6 @@
 $red: #E63B34;
 $blue: #bee2ea;
+$yellow: #ffdd00;
 
 %clearfix {
   &:before,
@@ -17,6 +18,11 @@ $blue: #bee2ea;
 @import "normalize.scss";
 @import "common.scss";
 
+body {
+  background: $red;
+  color: #fff;
+}
+
 
 .container {
   max-width: 800px;
@@ -26,7 +32,7 @@ $blue: #bee2ea;
 }
 
 .header {
-  padding: 15px 0;
+  padding-top: 15px;
   @extend %clearfix;
 
   h1 {
@@ -44,14 +50,13 @@ $blue: #bee2ea;
   background: $red;
   clear: both;
   color: #fff;
-  padding-top: 15px;
-  margin-bottom: 2em;
 
   p {
     font-weight: 200;
     font-size: 1.5em;
     text-shadow: 0 1px 0 rgba(#000, .1);
     -webkit-font-smoothing: antialiased;
+    margin-bottom: 50px;
   }
 
   ul {
@@ -62,7 +67,7 @@ $blue: #bee2ea;
 
   .download {
     margin: 0 auto;
-    background: #fd0;
+    background: $yellow;
     color: #000;
     text-shadow: 0 -1px 0 rgba(#fff, .5);
     display: block;
@@ -103,12 +108,11 @@ $blue: #bee2ea;
 
 .try {
   clear: both;
-  margin-bottom: -6em;
+  padding: 25px 0;
 
   .device {
     background: #222;
     padding: 20px;
-    margin: 20px 0;
     position: relative;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(#000, .1);
@@ -149,7 +153,7 @@ $blue: #bee2ea;
     .device {
       border-radius: 20px;
       padding: 40px;
-      margin: 40px 10%;
+      margin: 0 10%;
       position: relative;
     }
 
@@ -157,7 +161,7 @@ $blue: #bee2ea;
       .screen {
         background: url(../img/hammer.gif) no-repeat;
         background-size: cover;
-        .hitarea { display: none; }
+        #hitarea { display: none; }
       }
     }
 
@@ -173,11 +177,16 @@ $blue: #bee2ea;
       margin-top: -10px;
       border: solid 1px #444;
       border-radius: 100%;
+      cursor: pointer;
     }
   }
 }
 
 .readme {
+  background: #fff;
+  color: #222;
+  margin-bottom: 50px;
+
   // hide the title and intro
   h1, h1 + p { display: none; }
 

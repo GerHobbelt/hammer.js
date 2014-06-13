@@ -87,7 +87,7 @@ function onSwipe(ev) {
     setTimeout(function () {
         el.style.background = 'white';
         requestElementUpdate();
-    }, 300);
+    }, 200);
     requestElementUpdate();
 }
 
@@ -101,7 +101,11 @@ function onRotate(ev) {
 }
 
 function onTap(ev) {
-    el.style.background = el.style.background == 'yellow' ? 'white' : 'yellow';
+    el.style.background = '#fd0';
+    setTimeout(function () {
+        el.style.background = 'white';
+        requestElementUpdate();
+    }, 200);
 }
 
 function onDoubleTap(ev) {

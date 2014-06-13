@@ -20,12 +20,9 @@ html
 
     .splash
       .container
-        :markdown
-          Completely rewritten, with better experience for the recent mobile browsers by making use of the
-          touch-action css property, and a better API for more expert usage.
-
-          Also it's now able to recognize multiple gestures at the same page,
-          making it possible to build multi-user apps.
+        p.
+          Add touch gestures to your page with this small JavaScript library.<br>
+          Easy to implement, but also has the power to create custom gestures.
 
         a.download(href="http://github.com/EightMedia/hammer.js/tree/2.0.x/hammer.min.js")
           strong Hammer.min.js
@@ -42,8 +39,8 @@ html
             .screen
               #hitarea
 
-    // .container
-      .readme !{readme}
+    //.container.readme
+       | !{readme}
       // :markdown
         ## Getting started
         Hammer is easy to use. Just create an instance and bind the events. By default it supports all the standard
