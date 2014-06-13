@@ -40,8 +40,17 @@ body {
   }
 
   .share {
-    padding: 10px 0;
+    padding: 15px 0;
     float: right;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header .share {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 0 0 0;
   }
 }
 
@@ -93,7 +102,7 @@ body {
 }
 
 
-@media screen and (min-width:700px) {
+@media screen and (min-width:600px) {
   .splash .download {
     float: right;
     padding: 11px 30px;
